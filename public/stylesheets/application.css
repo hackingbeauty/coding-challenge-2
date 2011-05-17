@@ -13,67 +13,6 @@ h1 {
   background:#6b0d21;
 }
 
-#searchForm {
-}
-
-#searchInput {
-  color:#B4B2B2;
-  border: 6px solid #7cb229;
-  height: 30px;
-  width: 510px;
-  font-size: 1.3em;
-  padding:2px;
-}
-
-#searchBtn{
-  margin-top: 3px !important;
-  width: 130px;
-  height: 45px;
-  color: #152735;
-  border: 1px solid #FA2;
-  font-weight: bold;
-  font-size: 1.3em;
-  cursor: pointer;
-  background: #FFB82F;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFD757), to(#FA2));
-  background: -moz-linear-gradient(top, #FFEC64, #FFB027);
-}
-
 #main {
   padding:20px;
-}
-
-#map {
-  width:800px;
-  height:500px;
-  border:6px solid #152735;
-  float:right;
-  margin-top:-25px;
-}
-
-#results {
-  float:left;
-  margin-top:20px;
-}
-
-#results li {
-  clear:both;
-  float:left;
-  margin-bottom:10px;
-}
-
-#results li img {
-  float:left;
-}
-
-.pac-container{
-  font-size:1.3em;
-}
-
-.pac-container .pac-unselected {
-  padding:4px;
-}
-
-.pac-container .pac-selected {
-  font-weight:bold;
 }
