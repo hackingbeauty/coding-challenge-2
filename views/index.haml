@@ -13,7 +13,14 @@
         Top Restaurants
       - @top_restaurants.each do |restaurant|
         %li
-          = restaurant["name"]
+          %a{:href => "tel:#{restaurant["phone"]}"}
+            = restaurant["display_phone"]
+          %span
+            = restaurant["name"]
+          %img{:src => restaurant["rating_img_url_small"], :alt => "#{restaurant["name"]} rating"}
+          %img{:src => restaurant["image_url"], :alt => "#{restaurant["name"]} snapshot"}
+          
+          
       %h2
         Restaurant Categories
       - @restaurant_categories.each do |rc|

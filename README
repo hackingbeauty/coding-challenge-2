@@ -18,9 +18,7 @@ Total:
 90
 110
 ---
-485
-8 hours
-
+485 minutes / 60 minutes = ~8 hours
 Challenge #2:
 Log of Hours:
 May 18 - 12:30pm - 2:30pm - Yelp API ramp-up, got list of restaurants in JSON form and serialized to Ruby Hash
