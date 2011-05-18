@@ -1,9 +1,6 @@
-google_places_api_key: "AIzaSyAhrIXL-zeOVUIyrMJYkdSzN7v7F4vjz5M" 
-google_places_base_url: "https://maps.googleapis.com/maps/api/place/search/json?"
-google_places_autocomplete_url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?"
-san_francisco_http_call: "https://maps.googleapis.com/maps/api/place/search/json?location=37.77493,-122.41942&radius=370000&types=food&sensor=false"
-
-google_maps_api_key: "ABQIAAAApQAxIFaxmsDwtB1FWFnZaxSixSQG6ltZhyyv8UrZHEGNFmG_HBS1pQIHiP97o_t21kMxjlMopvPcbg"
-
-
-#https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Paris&types=geocode&sensor=false&key=AIzaSyAhrIXL-zeOVUIyrMJYkdSzN7v7F4vjz5M
+yelp_api_host: "api.yelp.com"
+YWSID: "1GDLbc7Csr05jHJQao-dA"
+yelp_consumer_key: "fDWrOEMzIJJWuJP7v2LPEA"
+yelp_consumer_secret: "rMP0D7yqudv7qWRTSILkKeluPM4"
+yelp_token_secret: "gE8v1LjRc5ByoMP7iPF9PgSxnkE"
+yelp_token: "YZ7gs5VRlG1a191tvcpEGrE5C7mRUhtA"

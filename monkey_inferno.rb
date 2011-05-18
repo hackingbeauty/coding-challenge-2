@@ -2,11 +2,9 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'yaml'
-require 'open-uri'
-require 'openssl'
 require 'json'
-
-OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE #SSL open-uri hack. open-uri can't read ssl links
+require 'oauth'
+require 'json'
 
 ### Configuration
 configure do   
@@ -17,13 +15,12 @@ configure do
 end
 
 get '/' do
+  consumer = OAuth::Consumer.new(settings.yelp_consumer_key, settings.yelp_consumer_secret, {:site => "http://#{settings.yelp_api_host}"})
+  access_token = OAuth::AccessToken.new(consumer, settings.yelp_token, settings.yelp_token_secret)
+  path = "/v2/search?term=restaurants&location=san%20francisco"
+  hash = JSON.parse(access_token.get(path).body) #convert JSON to ruby Hash
+  @top_restaurants = hash.fetch("businesses")
+  @restaurant_categories = ""
+  @most_recent_reviews = ""
   haml :index
 end
-
-# get '/get_restaurants' do
-#   url = settings.san_francisco_http_call + '&key=' + settings.google_places_api_key
-#   puts url
-#   jsonResponse = open(url).read.to_s
-# end
-
-

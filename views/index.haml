@@ -9,6 +9,19 @@
       Header 
     #main
       Challenge #2
+      %h2
+        Top Restaurants
+      - @top_restaurants.each do |restaurant|
+        %li
+          = restaurant["name"]
+      %h2
+        Restaurant Categories
+      - @restaurant_categories.each do |rc|
+        = rc
+      %h2
+        Most Recent Restaurant Reviews
+      - @most_recent_reviews.each do |mrr|
+        = mrr
     %script{:src => "javascripts/jquery-1.6.1.min.js", :type => "text/javascript"}
     %script{:src => "javascripts/application.js", :type => "text/javascript"}
 
