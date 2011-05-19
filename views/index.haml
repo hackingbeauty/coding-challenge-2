@@ -2,7 +2,7 @@
 %html
   %head
     %title Monkey Inferno Challenge #2
-    %link{ :href => "stylesheets/reset-min.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
+    / %link{ :href => "stylesheets/reset-min.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
     %link{ :href => "stylesheets/application.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
   %body
     #header
@@ -36,7 +36,8 @@
             %ul
               - value.each do |restaurant|
                 %li
-                  = restaurant["name"]        
+                  = restaurant["name"]  
+      %h2      
         Most Recent Restaurant Reviews
       %ul
         - @most_recent_reviews.each do |mrr|

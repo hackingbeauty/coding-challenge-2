@@ -21,31 +21,29 @@ get '/' do
   # hash = JSON.parse(access_token.get(path).body) #convert JSON to ruby Hash
   hash = JSON.parse(settings.yelp_json_response)
   @restaurants = hash.fetch("businesses")
-  @categories = {}
-  @restaurants.each do |restaurant|
+  @categories = get_categories(@restaurants)
+  
+  puts "===="
+  p @categories
+  
+  @most_recent_reviews = ""
+  haml :index
+end
+
+def get_categories(restaurants)
+  # p restaurants
+  categories = {}
+  restaurants.each do |restaurant|
     category = restaurant["categories"][0][0]
     arr = []
     arr << restaurant
     h = {}
-    if @categories.has_key?(category)
-      previous_category = @categories[category][0]
-      # puts "======"
-      # p previous_category
+    if categories.has_key?(category)
+      previous_category = categories[category][0]
       arr << previous_category
     end
     h["restaurants"] = arr      
-    @categories[category] = arr
+    categories[category] = arr
   end
-
-  # hash.each{|k,(a,b)| p a,b}
-  
-  @categories.each do |cat|
-     puts "===="
-        p cat
-   end
-  
-  # p @restaurants
-
-  @most_recent_reviews = ""
-  haml :index
+  return categories
 end
