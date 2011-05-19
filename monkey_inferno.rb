@@ -22,16 +22,11 @@ get '/' do
   hash = JSON.parse(settings.yelp_json_response)
   @restaurants = hash.fetch("businesses")
   @categories = get_categories(@restaurants)
-  
-  puts "===="
-  p @categories
-  
   @most_recent_reviews = ""
   haml :index
 end
 
 def get_categories(restaurants)
-  # p restaurants
   categories = {}
   restaurants.each do |restaurant|
     category = restaurant["categories"][0][0]
