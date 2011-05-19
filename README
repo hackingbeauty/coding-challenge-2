@@ -22,5 +22,9 @@ Total:
 Challenge #2:
 Log of Hours:
 May 18 - 12:30pm - 2:30pm - Yelp API ramp-up, got list of restaurants in JSON form and serialized to Ruby Hash
+2:30 - 5:00pm - set up basic project, created basic view, got list of restaurants
+5:00 - 6:00pm - converted yelp json response to hash of cuisines with restaurants as keys
+1:30pm - 2:30pm - added some css styling
+
 
 

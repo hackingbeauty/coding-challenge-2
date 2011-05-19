@@ -2,46 +2,52 @@
 %html
   %head
     %title Monkey Inferno Challenge #2
-    / %link{ :href => "stylesheets/reset-min.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
+    %link{ :href => "stylesheets/reset-min.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
     %link{ :href => "stylesheets/application.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }
   %body
     #header
-      Header 
+      %h1
+        Monkey Inferno Challenge #2 
     #main
-      Challenge #2
-      %h2
-        Top Restaurants
-      %ul
-        - @restaurants.each do |restaurant|
-          %li
-            %a{:href => "tel:#{restaurant["phone"]}"}
-              = restaurant["display_phone"]
-            %span
-              = restaurant["name"]
-            %div
-              = restaurant["categories"][0][0]
-            %img{:src => restaurant["rating_img_url_small"], :alt => "#{restaurant["name"]} rating"}
-            %img{:src => restaurant["image_url"], :alt => "#{restaurant["name"]} snapshot"} 
-            %ul
-              - restaurant["categories"].each do |category|
+      .module.one
+        %h2
+          Top Restaurants
+        %ul.list
+          - @restaurants.each do |restaurant|
+            %li.item
+              .name
+                = restaurant["name"]  
+              %img{:class=> "snapshot", :src => restaurant["image_url"], :alt => "#{restaurant["name"]} snapshot"}
+              %ul.info
+
                 %li
-                  = category[0]
-      %h2
-        Restaurant Categories
-      %ul
-        - @categories.each_pair do |cuisine,value|
-          %li
-            %div
-              = cuisine
-            %ul
-              - value.each do |restaurant|
+                  %a{:href => "tel:#{restaurant["phone"]}"}
+                    = restaurant["display_phone"]
                 %li
-                  = restaurant["name"]  
-      %h2      
-        Most Recent Restaurant Reviews
-      %ul
-        - @most_recent_reviews.each do |mrr|
-          = mrr
+                  %img{:src => restaurant["rating_img_url_small"], :alt => "#{restaurant["name"]} rating"}
+                %li
+                  %ul
+                    - restaurant["categories"].each do |category|
+                      %li
+                        = category[0]
+      .module.two
+        %h2
+          Restaurant Categories
+        %ul.list
+          - @categories.each_pair do |cuisine,value|
+            %li.item
+              .name
+                = cuisine
+              %ul
+                - value.each do |restaurant|
+                  %li
+                    = restaurant["name"]
+      .module.three  
+        %h2      
+          Recent Restaurant Reviews
+        %ul
+          - @most_recent_reviews.each do |mrr|
+            = mrr
     %script{:src => "javascripts/jquery-1.6.1.min.js", :type => "text/javascript"}
     %script{:src => "javascripts/application.js", :type => "text/javascript"}
 
