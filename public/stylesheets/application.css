@@ -22,6 +22,7 @@ h2 {
 
 #main {
   padding:20px;
+  min-width:970px;
 }
 
 #main #left_rail{
