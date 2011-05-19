@@ -16,3 +16,8 @@ h1 {
 #main {
   padding:20px;
 }
+
+#main ul {
+  border:2px solid red;
+/*  float:left;*/
+}

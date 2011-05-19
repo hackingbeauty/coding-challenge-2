@@ -1,0 +1,74 @@
+Google Places Request => https://maps.googleapis.com/maps/api/place/search/json?location=37.77493,-122.41942&radius=500&types=food&sensor=false&key=AIzaSyAhrIXL-zeOVUIyrMJYkdSzN7v7F4vjz5M
+
+Challenge #1:
+Log of Hours:
+May 16 - 12:00pm - 12:30pm
+May 16 - 1:15pm - 2:00pm - worked out ruby hiccups with open-uri, set up Google Places API key, configured yaml, successfully getting JSON response from Google Places
+May 16 - 2:00pm - 2:30pm - created JavaScript to make ajax call and parse JSON response
+May 16 - 2:30pm - 3:30pm - worked on Google Maps integration - hit some problems
+May 16 - 8:00pm - 10:00pm - figuring out/learning about Google Places API
+May 16 - 10:00pm - 11:30pm - successfully implemented autocomplete
+May 16 - 12:00am - 1:50am - just figuring out and toying with Google Maps
+Total:
+30
+45
+30
+60
+120
+90
+110
+---
+485 minutes / 60 minutes = ~8 hours
+Challenge #2:
+Log of Hours:
+May 18 - 12:30pm - 2:30pm - Yelp API ramp-up, got list of restaurants in JSON form and serialized to Ruby Hash
+May 18 - 2:30pm - 3:00pm - styling page, added tel:<phone number> attribute to hrefs for mobile access
+May 18 - 3:30pm - exceeded Yelp max daily requests
+May 18 - 4:00pm - 4:45pm - figuring out how to get recent reviews from yelp
+
+
+JSON
+
+{
+    "Chinese": {
+        "name": "Greek Restaurant",
+        "size": "3434"
+    },
+    "Greek": {
+        "name": "Second Greek Restaurant",
+        "size": "5555"
+    },
+    "Asian Fusion": {
+        "name": "Second Asian Fusion Restaurant",
+        "size": "32344"
+    },
+    "American": [
+        {
+            "name": "Second American Restaurant",
+            "size": "234234"
+        },
+        {
+            "name": "First American Restaurant",
+            "size": "23423423"
+        }
+    ]
+}
+
+HASH
+
+{
+  "Asian Fusion"=>{"name"=>"Second Asian Fusion Restaurant", "size"=>"32344"}, 
+  "Greek"=>{"name"=>"Second Greek Restaurant", "size"=>"5555"}, 
+  "Chinese"=>{"name"=>"Greek Restaurant", "size"=>"3434"}, 
+  "American"=>[
+    {"name"=>"Second American Restaurant", "size"=>"234234"}, 
+    {"name"=>"First American Restaurant", "size"=>"23423423"}
+  ]
+}
+
+
+
+
+
+
+
