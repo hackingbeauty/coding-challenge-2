@@ -18,7 +18,7 @@ get '/' do
   consumer = OAuth::Consumer.new(settings.yelp_consumer_key, settings.yelp_consumer_secret, {:site => "http://#{settings.yelp_api_host}"})
   access_token = OAuth::AccessToken.new(consumer, settings.yelp_token, settings.yelp_token_secret)
   path = "/v2/search?term=restaurants&location=san%20francisco"
-  # hash = JSON.parse(access_token.get(path).body) #convert JSON to ruby Hash
+  # hash_of_restaurants = JSON.parse(access_token.get(path).body) #convert JSON to ruby Hash
   hash_of_restaurants = JSON.parse(settings.yelp_json_response)
   hash_of_reviews  = JSON.parse(settings.yelp_json_response_for_reviews)
   @restaurants = hash_of_restaurants.fetch("businesses")
