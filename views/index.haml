@@ -63,8 +63,7 @@
                       = restaurant["display_phone"]
                   %li
                     %img{:src => restaurant["rating_img_url"], :alt => "#{restaurant["name"]} rating"}
-                  %li
-                    - restaurant["categories"].each do |category|
-                      %li
-                        = category[0]
+                  - restaurant["categories"].each do |category|
+                    %li
+                      = category[0]
 
