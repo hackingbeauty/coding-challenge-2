@@ -26,8 +26,10 @@
           %h2      
             Recent Restaurant Reviews
           %ul
-            - @most_recent_reviews.each do |mrr|
-              = mrr
+            - @recent_business_reviews.each do |business|
+              - business["reviews"].each do |review|
+                %li
+                  = review["rating"]
       #right_rail
         .module.one
           %h2
