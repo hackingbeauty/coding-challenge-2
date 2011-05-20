@@ -10,6 +10,10 @@ h1 {
   font-weight:bold;
 }
 
+h1 a {
+  color:white;
+}
+
 h2 {
   font-size:1.6em;
 }
