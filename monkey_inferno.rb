@@ -15,12 +15,6 @@ configure do
   end
 end
 
-# get '/heroku' do
-#   puts "=================="
-#   make_api_call('http://livingroom/_design/sessions/_view/videosession')
-#   puts "made make_api_call"
-# end
-
 get '/' do
   consumer = OAuth::Consumer.new(settings.yelp_consumer_key, settings.yelp_consumer_secret, {:site => "http://#{settings.yelp_api_host}"})
   access_token = OAuth::AccessToken.new(consumer, settings.yelp_token, settings.yelp_token_secret)
@@ -48,7 +42,6 @@ private
 
 def get_categories(restaurants)
   puts "====="
-  # p restaurants
   categories = {}
   restaurants.each do |restaurant|
     category = restaurant["categories"][0][0]
