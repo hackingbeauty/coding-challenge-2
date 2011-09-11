@@ -1,3 +1,3 @@
-require 'coding_challenge_1'
+require 'coding_challenge_2'
 run Sinatra::Application
 

@@ -41,7 +41,6 @@ private
   end
 
 def get_categories(restaurants)
-  puts "====="
   categories = {}
   restaurants.each do |restaurant|
     category = restaurant["categories"][0][0]
